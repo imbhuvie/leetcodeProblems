@@ -1,5 +1,5 @@
 package binary_search;
-    public class FindElement {
+    public class OccuranceOfElement {
         public int countOfElement(int[] nums,int target){
             int start=0;
             int end=nums.length-1;
