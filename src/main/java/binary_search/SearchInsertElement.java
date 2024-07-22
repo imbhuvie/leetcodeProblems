@@ -23,8 +23,9 @@ public class SearchInsertElement {
                 end = mid - 1;
             }
             if(start==end){
-
-                if(nums[start]<target)
+                if(nums[start]==target)
+                    return start;
+                else if(nums[start]<target)
                 {
                     return start+1;
                 }
