@@ -13,4 +13,7 @@ public class SearchElementTest extends TestCase {
         assertEquals(0,searchElement.search(nums1,2));
         assertEquals(4,searchElement.search(nums1,10));
     }
+
+    public void testTestSearch() {
+    }
 }
