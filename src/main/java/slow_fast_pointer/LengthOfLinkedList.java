@@ -41,6 +41,7 @@ public class LengthOfLinkedList {
 //        int len=lengthOfLinkedList.lengthOfList(ls);
 //        System.out.println(len);
 //    }
+//    new comments
 }
 class LinkedList{
     int data;
