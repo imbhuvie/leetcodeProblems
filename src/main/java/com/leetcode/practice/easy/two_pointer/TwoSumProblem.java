@@ -1,4 +1,4 @@
-package two_pointer;
+package com.leetcode.practice.easy.two_pointer;
 
 public class TwoSumProblem {
     public int[] twoSum(int[] nums, int target) {

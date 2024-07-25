@@ -1,4 +1,4 @@
-package two_pointer;
+package com.leetcode.practice.easy.two_pointer;
 
 public class MinimumAverage {
     public double minimumAverage(int[] nums) {

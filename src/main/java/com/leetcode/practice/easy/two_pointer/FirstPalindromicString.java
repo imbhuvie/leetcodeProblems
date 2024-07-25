@@ -1,4 +1,4 @@
-package two_pointer;
+package com.leetcode.practice.easy.two_pointer;
 
 public class FirstPalindromicString {
     public String firstPalindrome(String[] words) {

@@ -1,9 +1,10 @@
-package slow_fast_pointer;
-public class LengthOfLinkedList {
-            public int lengthOfList(LinkedList list){
+package com.leetcode.practice.easy.slow_fast_pointer;
+//To find length of LinkedList.
+public class ProblemsOnLinkedList {
+            public int lengthOfLinkedList(LinkedList list){
                 LinkedList slow,fast;
                 slow=fast=list;
-                if(slow==null)
+                if(list==null)
                     return 0;
                 int count = 1;
                 while (fast != null && fast.next != null) {
@@ -17,8 +18,4 @@ public class LengthOfLinkedList {
                 }
                 return count;
             }
-}
-class LinkedList{
-    int data;
-    LinkedList next;
 }

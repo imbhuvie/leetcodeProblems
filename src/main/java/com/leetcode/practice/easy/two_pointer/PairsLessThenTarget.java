@@ -1,4 +1,4 @@
-package two_pointer;
+package com.leetcode.practice.easy.two_pointer;
 
 import java.util.List;
 

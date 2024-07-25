@@ -1,14 +1,17 @@
-package binary_search;
+package com.leetcode.practice.easy.binary_search;
 
 //35. Search Insert Position
+
+import java.lang.reflect.Array;
 
 public class SearchInsertElement {
     public int searchInsert(int[] nums, int target) {
         int mid = 0;
         int start = 0;
         int end = nums.length - 1;
-        if(nums.length==1){
-            if(nums[0]>=target) return 0;
+
+        if(nums.length <=1){
+            if(nums.length==0 ||nums[0]>=target) return 0;
             else return 1;
         }
         while (start <= end) {
@@ -22,22 +25,10 @@ public class SearchInsertElement {
             } else {
                 end = mid - 1;
             }
-            if(start==end){
-                if(nums[start]==target)
-                    return start;
-                else if(nums[start]<target)
-                {
-                    return start+1;
-                }
-                else{
-                    if(start==0||start==nums.length-1)
-                        return start;
-                    else return start-1;
-                }
-            }
+
 
 
         }
-            return 0;
+            return start;
     }
 }
