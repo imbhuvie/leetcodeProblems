@@ -1,37 +1,35 @@
 package com.leetcode.practice.easy.two_pointer;
 
 public class ProblemsOnReverseString {
-/*    2000. Reverse Prefix of Word
+    /*    2000. Reverse Prefix of Word
 
-    Given a 0-indexed string word and a character ch,reverse the segment of word that starts at
-    index 0 and ends at the index of the first occurrence of ch (inclusive).
-    If the character ch does not exist in word, do nothing.
+        Given a 0-indexed string word and a character ch,reverse the segment of word that starts at
+        index 0 and ends at the index of the first occurrence of ch (inclusive).
+        If the character ch does not exist in word, do nothing.
 
-    For example, if word = "abcdefd" and ch = "d", then you should reverse the segment
-    that starts at 0 and ends at 3 (inclusive). The resulting string will be "dcbaefd".
+        For example, if word = "abcdefd" and ch = "d", then you should reverse the segment
+        that starts at 0 and ends at 3 (inclusive). The resulting string will be "dcbaefd".
 
-    Constraints:
+        Constraints:
 
-    1 <= word.length <= 250
-    word consists of lowercase English letters.
-    ch is a lowercase English letter.
-*/
-public String reversePrefix(String word, char ch) {
-    String str="";
-    for(int i=0;i<word.length();i++){
-        if(word.charAt(i)==ch)
-        {
-            return word.charAt(i)+str+word.substring(i+1,word.length());
+        1 <= word.length <= 250
+        word consists of lowercase English letters.
+        ch is a lowercase English letter.
+    */
+    public String reversePrefix(String word, char ch) {
+        String str = "";
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == ch) {
+                return word.charAt(i) + str + word.substring(i + 1, word.length());
 //      2nd approach without using else
 //           String revString= reverseString(word.substring(0,i+1));
 //           return revString+word.substring(i+1,word.length());
+            } else
+                str = word.charAt(i) + str;
         }
-        else
-            str=word.charAt(i)+str;
-    }
 
-    return word;
-}
+        return word;
+    }
 
     private String reverseString(String substring) {
         String str = "";
@@ -39,5 +37,19 @@ public String reversePrefix(String word, char ch) {
             str = str + substring.charAt(i);
         }
         return str;
+    }
+
+    /*
+    557. Reverse Words in a String III
+        Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+     */
+    public String reverseWords(String s) {
+        StringBuilder result = new StringBuilder("");
+        String[] strArray = s.split(" ");
+        for (int i = 0; i < strArray.length; i++) {
+            result.append(reverseString(strArray[i]));
+            result.append(" ");
+        }
+        return result.deleteCharAt(result.length() - 1).toString();
     }
 }

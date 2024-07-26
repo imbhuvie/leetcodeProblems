@@ -1,7 +1,7 @@
 package com.leetcode.practice.easy.two_pointer;
 
 public class ArrayDifferenceProblem {
-
+    //Yet Not Done.
     /*
     You are given a 0-indexed, strictly increasing integer array nums and a positive integer diff. A triplet (i, j, k) is an arithmetic triplet if the following conditions are met:
 

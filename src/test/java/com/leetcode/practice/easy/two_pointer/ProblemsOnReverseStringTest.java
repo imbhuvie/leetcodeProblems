@@ -4,11 +4,18 @@ import junit.framework.TestCase;
 
 public class ProblemsOnReverseStringTest extends TestCase {
 
-    ProblemsOnReverseString problemsOnReverseString =new ProblemsOnReverseString();
+    ProblemsOnReverseString problemsOnReverseString = new ProblemsOnReverseString();
+
     public void testReversePrefix() {
-        assertEquals("dcbaef",problemsOnReverseString.reversePrefix("abcdef",'d'));
-        assertEquals("zxyxxe",problemsOnReverseString.reversePrefix("xyxzxe",'z'));
-        assertEquals("abcd",problemsOnReverseString.reversePrefix("abcd",'z'));
+        assertEquals("dcbaef", problemsOnReverseString.reversePrefix("abcdef", 'd'));
+        assertEquals("zxyxxe", problemsOnReverseString.reversePrefix("xyxzxe", 'z'));
+        assertEquals("abcd", problemsOnReverseString.reversePrefix("abcd", 'z'));
+
+    }
+
+    public void testReverseWords() {
+        assertEquals("ih eivuhb", problemsOnReverseString.reverseWords("hi bhuvie"));
+        assertEquals("s'teL ekat edoCteeL tsetnoc", problemsOnReverseString.reverseWords("Let's take LeetCode contest"));
 
     }
 }
