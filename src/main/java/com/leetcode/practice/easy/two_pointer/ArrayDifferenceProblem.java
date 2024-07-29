@@ -17,19 +17,31 @@ public class ArrayDifferenceProblem {
         nums is strictly increasing.
         */
     public int arithmeticTriplets(int[] nums, int diff) {
-
-        for (int i = nums.length - 1; i >= 0; i--) {
-            int count = 0;
-            for (int j = i - 1; j >= 0; j--) {
-                if (nums[i] - nums[j] == diff) {
-                    for (int k = j - 1; k >= 0; k--) {
-                        if (nums[j] - nums[k] == diff)
-                            count++;
-                    }
-                }
+        int count = 0;
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (findElementInArray(nums, i + 1, (nums[i] + diff))) {
+                if (findElementInArray(nums, i + 2, (nums[i] + (2 * diff)))) {
+                    count++;
+                } else i++;
             }
         }
+        return count;
+    }
 
-        return diff;
+    public boolean findElementInArray(int[] nums, int index, int target) {
+        int start = index;
+        int end = nums.length - 1;
+        int mid;
+        while (start <= end) {
+            mid = (start + end) / 2;
+            if (nums[mid] == target)
+                return true;
+            else if (nums[mid] < target) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return false;
     }
 }

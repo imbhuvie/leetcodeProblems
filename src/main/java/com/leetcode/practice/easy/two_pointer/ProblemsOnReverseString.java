@@ -52,4 +52,42 @@ public class ProblemsOnReverseString {
         }
         return result.deleteCharAt(result.length() - 1).toString();
     }
+
+/*
+680. Valid Palindrome II
+
+Given a string s, return true if the s can be palindrome after deleting at most one character from it.
+Example 1:
+Input: s = "aba"
+Output: true
+Example 2:
+Input: s = "abca"
+Output: true
+Explanation: You could delete the character 'c'.
+ */
+
+    public boolean validPalindrome(String s) {
+
+        int j = s.length() - 1;
+        for (int i = 0; i < s.length() / 2; i++) {
+            if (s.charAt(i) != s.charAt(j)) {
+                if ((checkPalindrome(s, i + 1, j)) || checkPalindrome(s, i, j - 1))
+                    return true;
+                else
+                    return false;
+            }
+            j--;
+        }
+        return true;
+    }
+
+    private boolean checkPalindrome(String s, int i, int j) {
+        while (i < j) {
+            if (s.charAt(i) != s.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
 }

@@ -18,4 +18,8 @@ public class ProblemsOnReverseStringTest extends TestCase {
         assertEquals("s'teL ekat edoCteeL tsetnoc", problemsOnReverseString.reverseWords("Let's take LeetCode contest"));
 
     }
+
+    public void testValidPalindrome() {
+        assertEquals(true, problemsOnReverseString.validPalindrome("abdvdbka"));
+    }
 }
